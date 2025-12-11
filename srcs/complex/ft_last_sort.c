@@ -50,7 +50,7 @@ static t_op	*ft_find_best_mv(int start, int end, t_stacks *stacks)
 	return (op_c);
 }
 
-static void	ft_srt_lst_c(t_stacks *stacks, t_flag *flag, t_counter *c, int c_sz)
+static void	ft_srt_lst(t_stacks *stacks, t_flag *flag, t_counter *c, int c_sz)
 {
 	t_op	*op_c;
 	int		end;
@@ -61,13 +61,13 @@ static void	ft_srt_lst_c(t_stacks *stacks, t_flag *flag, t_counter *c, int c_sz)
 	while (ft_remaining(start, end, stacks->b))
 	{
 		op_c = ft_find_best_mv(start, end, stacks);
-		ft_exec(stacks, flag, op_c, c, 1);
+		ft_exec_s(stacks, flag, op_c, c);
 		free(op_c);
 	}
 	return ;
 }
 
-static void	ft_sort_chunks(t_stacks *stacks, t_flag *flag, t_counter *c, int c_sz)
+static void	ft_sort_c(t_stacks *stacks, t_flag *flag, t_counter *c, int c_sz)
 {
 	t_op	*op_c;
 	int		end;
@@ -82,7 +82,7 @@ static void	ft_sort_chunks(t_stacks *stacks, t_flag *flag, t_counter *c, int c_s
 		while (ft_remaining(start, end, stacks->b))
 		{
 			op_c = ft_find_best_mv(start, end, stacks);
-			ft_exec(stacks, flag, op_c, c, 1);
+			ft_exec_s(stacks, flag, op_c, c);
 			free(op_c);
 		}
 		i--;
@@ -90,10 +90,10 @@ static void	ft_sort_chunks(t_stacks *stacks, t_flag *flag, t_counter *c, int c_s
 	return ;
 }
 
-void	ft_last_sort(t_stacks *stacks, t_flag *flag, t_counter *c, int c_sz)
+void	ft_l_sort(t_stacks *stacks, t_flag *flag, t_counter *c, int c_sz)
 {
-	ft_srt_lst_c(stacks, flag, c, c_sz);
-	ft_sort_chunks(stacks, flag, c, c_sz);
+	ft_srt_lst(stacks, flag, c, c_sz);
+	ft_sort_c(stacks, flag, c, c_sz);
 	ft_put_min_at_top(&stacks->a, flag, c);
 	if (stacks->b != NULL)
 		ft_printf("Erreur dans les calculs.\n");

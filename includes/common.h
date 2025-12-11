@@ -16,7 +16,7 @@
 /* -- INCLUDES -- */
 # include <unistd.h>
 # include <stdlib.h>
-# include "../LIBFT/libft.h"
+# include "../libft/libft.h"
 
 /* -- CONSTANT VALUES -- */
 # define NB_CHUNKS 8
@@ -141,7 +141,7 @@ void		ft_complex_sort(t_stacks *stacks, t_flag *flag, t_counter *c);
 /* -- test chunk sort | smart sort -- */
 void		ft_complex_sort_2(t_stacks *stacks, t_flag *flag, t_counter *c);
 void		ft_pre_sort(t_stacks *stacks, t_flag *flag, t_counter *c, int c_sz);
-void		ft_last_sort(t_stacks *stacks, t_flag *flag, t_counter *c, int c_sz);
+void		ft_l_sort(t_stacks *stacks, t_flag *flag, t_counter *c, int c_sz);
 void		ft_put_min_at_top(t_node **stack, t_flag *flag, t_counter *c);
 int			ft_remaining_sub(t_node *stack, int start, int end, int size);
 int			ft_index_in_higher_c(int index, int start, int end, int size);
@@ -189,7 +189,8 @@ void		ft_reset_op(t_op *op_c);
 void		ft_smarter_cost(t_op *op_c);
 void		ft_change_smarter_move(t_op *op_c, t_op *lop_c);
 void		ft_put_max_top(t_node **stack, t_flag *flag, t_counter *c);
-void		ft_exec(t_stacks *stacks, t_flag *flag, t_op *op_c, t_counter *c, int pa);
+void		ft_exec(t_stacks *stacks, t_flag *flag, t_op *op_c, t_counter *c);
+void		ft_exec_s(t_stacks *stacks, t_flag *flag, t_op *op_c, t_counter *c);
 void		ft_repeat_rra(t_node **stack, t_flag *flag, t_counter *c, int n);
 void		ft_repeat_rrb(t_node **stack, t_flag *flag, t_counter *c, int n);
 void		ft_repeat_rrr(t_stacks *stacks, t_flag *flag, t_counter *c, int n);

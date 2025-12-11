@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 11:42:31 by kkraft            #+#    #+#             */
-/*   Updated: 2025/12/10 14:26:53 by marvin           ###   ########.fr       */
+/*   Updated: 2025/12/11 15:37:53 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ static void	ft_complex_sort_sub(t_stacks *stacks, t_flag *flag, t_counter *c)
 			ft_reset_op(lop_count);
 			tmp = tmp->next;
 		}
-		ft_exec(stacks, flag, op_count, c, 0);
+		ft_exec(stacks, flag, op_count, c);
 		op_count->total = INT_MAX_VALUE;
 	}
 	free(op_count);

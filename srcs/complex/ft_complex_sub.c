@@ -33,6 +33,6 @@ void	ft_complex_sort_2(t_stacks *stacks, t_flag *flag, t_counter *c)
 
 	chunk_size = ft_stack_size(stacks->a) / NB_CHUNKS;
 	ft_pre_sort(stacks, flag, c, chunk_size);
-	ft_last_sort(stacks, flag, c, chunk_size);
+	ft_l_sort(stacks, flag, c, chunk_size);
 	return ;
 }

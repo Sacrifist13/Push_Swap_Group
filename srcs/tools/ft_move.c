@@ -26,7 +26,7 @@ void	ft_change_smarter_move(t_op *op_c, t_op *lop_c)
 	return ;
 }
 
-void	ft_exec(t_stacks *stacks, t_flag *flag, t_op *op_c, t_counter *c, int pa)
+void	ft_exec(t_stacks *stacks, t_flag *flag, t_op *op_c, t_counter *c)
 {
 	if (!stacks || !flag || !op_c || !c)
 		return ;
@@ -36,9 +36,19 @@ void	ft_exec(t_stacks *stacks, t_flag *flag, t_op *op_c, t_counter *c, int pa)
 	ft_repeat_rrr(stacks, flag, c, op_c->rrr_count);
 	ft_repeat_rra(&stacks->a, flag, c, op_c->rra_count);
 	ft_repeat_rrb(&stacks->b, flag, c, op_c->rrb_count);
-	if (!pa)
-		ft_push_b(&stacks->b, &stacks->a, flag->bench, c);
-	else
-		ft_push_a(&stacks->a, &stacks->b, flag->bench, c);
+	ft_push_b(&stacks->b, &stacks->a, flag->bench, c);
 	return ;
+}
+
+void	ft_exec_s(t_stacks *stacks, t_flag *flag, t_op *op_c, t_counter *c)
+{
+	if (!stacks || !flag || !op_c || !c)
+		return ;
+	ft_repeat_rr(stacks, flag, c, op_c->rr_count);
+	ft_repeat_ra(&stacks->a, flag, c, op_c->ra_count);
+	ft_repeat_rb(&stacks->b, flag, c, op_c->rb_count);
+	ft_repeat_rrr(stacks, flag, c, op_c->rrr_count);
+	ft_repeat_rra(&stacks->a, flag, c, op_c->rra_count);
+	ft_repeat_rrb(&stacks->b, flag, c, op_c->rrb_count);
+	ft_push_a(&stacks->a, &stacks->b, flag->bench, c);
 }

@@ -12,7 +12,7 @@
 
 NAME= 			push_swap
 LIBFT=			libft.a
-CFLAGS= 		-Iincludes -ILIBFT
+CFLAGS= 		-Iincludes -Ilibft
 CC= 			cc
 RM= 			rm -rf
 
@@ -72,19 +72,19 @@ OBJS=			$(SRC_MAIN:.c=.o) $(SRCS_TOOLS:.c=.o) $(SRCS_PARSING:.c=.o) $(SRCS_STRUC
 all:			$(LIBFT) $(NAME)
 
 $(LIBFT):
-				$(MAKE) -C LIBFT/
+				$(MAKE) -C libft/
 
 $(NAME):		$(OBJS)
-				$(CC) $(OBJS) -L./LIBFT -lft -o $(NAME)
+				$(CC) $(OBJS) -L./libft -lft -o $(NAME)
 %.o:%.c
 				$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
-				$(MAKE) clean -C LIBFT/
+				$(MAKE) clean -C libft/
 				$(RM) $(OBJS)
 
 fclean : 		clean
-				$(MAKE) fclean -C LIBFT/
+				$(MAKE) fclean -C libft/
 				$(RM) $(NAME)
 
 re: 			fclean all
