@@ -109,7 +109,7 @@ To meet the sorting condition (elements in ascending order in a and empty `b`), 
 
 ### Chunk Sort (Medium) $O(n\sqrt{n})$
 
-### Turk Sort (Complex) $O(n \log n)$
+### Segment Logic Sort (Complex) $O(n \log n)$
 #### Phase 1 - Distribution and Pre-Sorting (A $\rightarrow$ B)
 
 This phase moves the majority of elements from stack `a` to stack `b`, performing a binary pre-sorting within `b` while minimizing rotations in `a`.
