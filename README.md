@@ -87,29 +87,69 @@ ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker $ARG
 ## Algorithms
 
 ### Selection Sort (Simple) $O(n^2)$
-#### 1 - Miniimum Search
+* **1 - Miniimum Search**
 
-In each iteration, the algorithm locates the position of the smallest unsorted element, identified by its lowest sorted index (or raw value), within stack a.
+In each iteration, the algorithm locates the position of the smallest unsorted element, identified by its lowest sorted index (or raw value), within stack `a`.
 
-#### 2 - Rotation to the Top
+* **2 - Rotation to the Top**
 
-A distance calculation is performed to determine the shortest operation sequence (minimum of ra or rra) required to bring this minimum element to the top of stack a.
+A distance calculation is performed to determine the shortest operation sequence (minimum of `ra` or `rra`) required to bring this minimum element to the top of stack `a`.
 
-#### 3 - Unidirectional Transfer
+* **3 - Unidirectional Transfer**
 
-The element is immediately transferred to stack b using the pb instruction.
+The element is immediately transferred to stack `b` using the `pb` instruction.
 
-#### 4 - Reconstruction Phase
+* **4 - Reconstruction Phase**
 
-Steps 1 through 3 are repeated until a is completely empty. Stack b then holds all elements in strictly descending order (from largest to smallest, with the absolute minimum at the bottom).
+Steps 1 through 3 are repeated until a is completely empty. Stack `b` then holds all elements in strictly descending order (from largest to smallest, with the absolute minimum at the bottom).
 
-#### 5 - Finalization: 
+* **5 - Finalization** 
 
-To meet the sorting condition (elements in ascending order in a and empty b), all elements are returned from b to a using a sequence of pa operations.
+To meet the sorting condition (elements in ascending order in a and empty `b`), all elements are returned from `b` to `a` using a sequence of `pa` operations.
 
 ### Chunk Sort (Medium) $O(n\sqrt{n})$
 
 ### Turk Sort (Complex) $O(n \log n)$
+#### Phase 1 - Distribution and Pre-Sorting (A $\rightarrow$ B)
+
+This phase moves the majority of elements from stack `a` to stack `b`, performing a binary pre-sorting within `b` while minimizing rotations in `a`.
+
+* **1 - Chunk Division**
+Stack `a` is conceptually divided into 8 equal segments (chunks) based on the sorted indices.
+
+* **2 - Iterative Block Processing (2 Chunks at a Time)**
+The algorithm processes the unsorted elements by defining a current processing range covering two consecutive chunks (e.g., Chunk 1 & 2, then Chunk 3 & 4).
+
+* **3 - Targeting and Binary Pre-sorting in B**
+As elements within the current two-chunk range are pushed to B, their placement is optimized for Phase 4:
+
+ -Upper Placement (Largest Index): If an element belongs to the upper chunk of the pair, it is pushed to `b` and kept near the top (using pb).
+ -Lower Placement (Smallest Index): If an element belongs to the lower chunk of the pair, it is pushed to `b` and immediately rotated towards the bottom (`rb`).
+ - Optimization: If the current element belongs to the Lower Chunk and the next targeted element in `a` is not yet at the top of `a`, the instruction `rr` is used instead of separate `ra` and `rb` operations.
+
+Termination Condition This entire process (Steps 2 and 3) is repeated iteratively until stack `a` is completely empty.
+
+#### Phase 2 - Final Triage and Minimum Cost Analysis (B $\rightarrow$ A)
+* **1 - Chunk Priority**
+The process is executed chunk by chunk, starting with the elements belonging to the largest index chunk (highest values) present in `b`, and then progressively moving down to the smallest index chunk. This ensures `a` is built correctly from the largest numbers downwards.
+
+* **2 - Target Calculation**
+Within the currently active chunk, the algorithm performs its cost analysis:
+ - For every element in `b` belonging to this chunk, the algorithm identifies the ideal insertion point in `a`
+ - The algorithm calculates the total cost (the number of operations) required to move the element from its current position in `b` to its
+    target position in `a`. This cost includes:
+     - Rotations required in `b` (`rb` or `rrb`).
+     - Rotations required in `a` (`ra` or `rra`).
+     - Optimization for combined rotations (`rr` or `rrr`) when possible.
+
+* **3 - Execution**
+The algorithm executes the single set of instructions corresponding to the element with the absolute minimum cost across the elements of the current chunk in stack `b`.
+
+* **4 - Iteration**
+This process (Steps 2, 3) is repeated until the current chunk is empty in `b`, at which point the algorithm moves to the next largest index chunk, and so on, until `b` is empty.
+
+* **5 - Final Rotation**
+Once `b` is empty, stack `a` is sorted except for potentially needing a final minimal rotation (`ra` or `rra`) to bring the smallest element (index 0) to the very top.
 
 ### Adaptive Strategy
 
