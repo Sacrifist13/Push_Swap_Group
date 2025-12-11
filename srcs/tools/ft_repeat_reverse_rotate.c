@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_repeat_reverse_rotate.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkraft <kkraft@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jmattion <jmattion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 15:14:45 by kkraft            #+#    #+#             */
-/*   Updated: 2025/11/19 09:32:28 by kkraft           ###   ########.fr       */
+/*   Updated: 2025/12/11 18:37:08 by jmattion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_repeat_rrr(t_stacks *stacks, t_flag *flag, t_counter *c, int n)
 		return ;
 	while (i < n)
 	{
-		ft_reverse_rotate_r(&stacks->a, &stacks->b, flag->bench, c);
+		ft_reverse_rotate_r(&stacks->a, &stacks->b, 1, c);
 		i++;
 	}
 	return ;

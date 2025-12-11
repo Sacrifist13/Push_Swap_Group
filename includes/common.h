@@ -111,17 +111,17 @@ t_op		*ft_new_op(void);
 /* ----              ---- */
 
 /* -- RULES PART -- */
-void		ft_push_a(t_node **a, t_node **b, int bm, t_counter *c);
-void		ft_push_b(t_node **b, t_node **a, int bm, t_counter *c);
+void		ft_push_a(t_node **a, t_node **b, int w, t_counter *c);
+void		ft_push_b(t_node **b, t_node **a, int w, t_counter *c);
 void		ft_reverse_rotate_a(t_node **stack, int w, int bm, t_counter *c);
 void		ft_reverse_rotate_b(t_node **stack, int w, int bm, t_counter *c);
-void		ft_reverse_rotate_r(t_node **a, t_node **b, int bm, t_counter *c);
+void		ft_reverse_rotate_r(t_node **a, t_node **b, int w, t_counter *c);
 void		ft_rotate_a(t_node **stack, int w, int bm, t_counter *c);
 void		ft_rotate_b(t_node **stack, int w, int bm, t_counter *c);
-void		ft_rotate_r(t_node **a, t_node **b, int bm, t_counter *c);
+void		ft_rotate_r(t_node **a, t_node **b, int w, t_counter *c);
 void		ft_swap_a(t_node **stack, int w, int bm, t_counter *c);
 void		ft_swap_b(t_node **stack, int w, int bm, t_counter *c);
-void		ft_swap_s(t_node **a, t_node **b, int bm, t_counter *c);
+void		ft_swap_s(t_node **a, t_node **b, int w, t_counter *c);
 /* ----              ---- */
 
 /* -- SELECTOR PART -- */

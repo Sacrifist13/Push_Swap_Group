@@ -36,7 +36,7 @@ void	ft_exec(t_stacks *stacks, t_flag *flag, t_op *op_c, t_counter *c)
 	ft_repeat_rrr(stacks, flag, c, op_c->rrr_count);
 	ft_repeat_rra(&stacks->a, flag, c, op_c->rra_count);
 	ft_repeat_rrb(&stacks->b, flag, c, op_c->rrb_count);
-	ft_push_b(&stacks->b, &stacks->a, flag->bench, c);
+	ft_push_b(&stacks->b, &stacks->a, 1, c);
 	return ;
 }
 
@@ -50,5 +50,5 @@ void	ft_exec_s(t_stacks *stacks, t_flag *flag, t_op *op_c, t_counter *c)
 	ft_repeat_rrr(stacks, flag, c, op_c->rrr_count);
 	ft_repeat_rra(&stacks->a, flag, c, op_c->rra_count);
 	ft_repeat_rrb(&stacks->b, flag, c, op_c->rrb_count);
-	ft_push_a(&stacks->a, &stacks->b, flag->bench, c);
+	ft_push_a(&stacks->a, &stacks->b, 1, c);
 }

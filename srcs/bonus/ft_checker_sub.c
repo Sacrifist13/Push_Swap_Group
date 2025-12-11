@@ -6,7 +6,7 @@
 /*   By: jmattion <jmattion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:04:34 by jmattion          #+#    #+#             */
-/*   Updated: 2025/12/11 17:17:37 by jmattion         ###   ########.fr       */
+/*   Updated: 2025/12/11 18:29:43 by jmattion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	ft_do_op(t_stacks *stacks, t_counter *counter, char *op)
 	else if (!ft_strcmp(op, "ss"))
 		ft_swap_s(&stacks->a, &stacks->b, 0, counter);
 	else if (!ft_strcmp(op, "pa"))
-		ft_push_a(&stacks->a, &stacks->b, 1, counter);
+		ft_push_a(&stacks->a, &stacks->b, 0, counter);
 	else if (!ft_strcmp(op, "pb"))
-		ft_push_b(&stacks->b, &stacks->a, 1, counter);
+		ft_push_b(&stacks->b, &stacks->a, 0, counter);
 	else
 		return ;
 }

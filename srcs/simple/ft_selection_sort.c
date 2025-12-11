@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_selection_sort.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkraft <kkraft@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jmattion <jmattion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 15:09:20 by kkraft            #+#    #+#             */
-/*   Updated: 2025/11/22 19:29:32 by kkraft           ###   ########.fr       */
+/*   Updated: 2025/12/11 18:39:10 by jmattion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ void	ft_simple_sort(t_stacks *stacks, t_flag *flag, t_counter *c)
 				ft_repeat_rra(&stacks->a, flag, c, cost_down);
 			else
 				ft_repeat_ra(&stacks->a, flag, c, cost_up);
-			ft_push_b(&stacks->b, &stacks->a, flag->bench, c);
+			ft_push_b(&stacks->b, &stacks->a, 1, c);
 		}
 	}
 	while (stacks->b != NULL)
-		ft_push_a(&stacks->a, &stacks->b, flag->bench, c);
+		ft_push_a(&stacks->a, &stacks->b, 1, c);
 	return ;
 }

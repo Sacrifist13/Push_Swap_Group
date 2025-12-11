@@ -6,7 +6,7 @@
 /*   By: jmattion <jmattion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 17:49:46 by kkraft            #+#    #+#             */
-/*   Updated: 2025/12/11 16:01:44 by jmattion         ###   ########.fr       */
+/*   Updated: 2025/12/11 18:25:08 by jmattion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@ void	ft_print_benchmark(t_counter *c, t_flag *flag, float disorder)
 	int	disorder_int;
 
 	disorder_int = (int)(disorder * 100000);
-	ft_printf("\n\n========================================\n");
-	ft_printf("            BENCH MARK MODE\n");
-	ft_printf("========================================\n\n");
 	ft_print_disorder(disorder_int, disorder_int % 10, disorder);
 	ft_putstr_fd("\n", 2);
 	ft_print_strategy(flag, disorder);

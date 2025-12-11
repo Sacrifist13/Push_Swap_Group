@@ -31,8 +31,7 @@ void	ft_rotate_a(t_node **stack, int w, int bm, t_counter *c)
 	if (w)
 	{
 		c->ra_count++;
-		if (!bm)
-			ft_printf("ra\n");
+		ft_printf("ra\n");
 	}
 	return ;
 }
@@ -56,17 +55,16 @@ void	ft_rotate_b(t_node **stack, int w, int bm, t_counter *c)
 	if (w)
 	{
 		c->rb_count++;
-		if (!bm)
-			ft_printf("rb\n");
+		ft_printf("rb\n");
 	}
 	return ;
 }
 
-void	ft_rotate_r(t_node **a, t_node **b, int bm, t_counter *c)
+void	ft_rotate_r(t_node **a, t_node **b, int w, t_counter *c)
 {
-	ft_rotate_a(a, 0, bm, c);
-	ft_rotate_b(b, 0, bm, c);
-	if (!bm)
+	ft_rotate_a(a, 0, 0, c);
+	ft_rotate_b(b, 0, 0, c);
+	if (w)
 		ft_printf("rr\n");
 	c->rr_count++;
 	return ;

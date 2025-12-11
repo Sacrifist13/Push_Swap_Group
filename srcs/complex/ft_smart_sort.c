@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_smart_sort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jmattion <jmattion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 11:42:31 by kkraft            #+#    #+#             */
-/*   Updated: 2025/12/11 15:37:53 by marvin           ###   ########.fr       */
+/*   Updated: 2025/12/11 18:38:55 by jmattion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,7 @@ void	ft_complex_sort(t_stacks *stacks, t_flag *flag, t_counter *c)
 		ft_complex_sort_sub(stacks, flag, c);
 		ft_put_max_top(&stacks->b, flag, c);
 		while (stacks->b != NULL)
-			ft_push_a(&stacks->a, &stacks->b, flag->bench, c);
+			ft_push_a(&stacks->a, &stacks->b, 1, c);
 	}
 	return ;
 }

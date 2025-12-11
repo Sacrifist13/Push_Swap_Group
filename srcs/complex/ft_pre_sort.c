@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pre_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkraft <kkraft@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jmattion <jmattion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:17:47 by kkraft            #+#    #+#             */
-/*   Updated: 2025/11/28 09:22:26 by kkraft           ###   ########.fr       */
+/*   Updated: 2025/12/11 18:37:59 by jmattion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ static void	ft_sort_init(t_stacks *stacks, t_flag *flag, t_counter *c, int size)
 		{
 			if (ft_in_chunk(start, end, stacks->a->index))
 			{
-				ft_push_b(&stacks->b, &stacks->a, flag->bench, c);
+				ft_push_b(&stacks->b, &stacks->a, 1, c);
 				if (ft_node_in_chunk(stacks->a, start, end, size))
 					ft_rotate_b(&stacks->b, 1, flag->bench, c);
 				else if (stacks->a)
-					ft_rotate_r(&stacks->a, &stacks->b, flag->bench, c);
+					ft_rotate_r(&stacks->a, &stacks->b, 1, c);
 			}
 			else if (ft_index_in_higher_c(stacks->a->index, start, end, size))
-				ft_push_b(&stacks->b, &stacks->a, flag->bench, c);
+				ft_push_b(&stacks->b, &stacks->a, 1, c);
 			else
 				ft_rotate_a(&stacks->a, 1, flag->bench, c);
 		}
@@ -70,16 +70,16 @@ static void	ft_sort_term(t_stacks *stacks, t_flag *flag, t_counter *c, int size)
 	{
 		if (ft_in_chunk(start, end, stacks->a->index))
 		{
-			ft_push_b(&stacks->b, &stacks->a, flag->bench, c);
+			ft_push_b(&stacks->b, &stacks->a, 1, c);
 			if (stacks->a && (ft_in_chunk(start, end, stacks->a->index)
 					|| ft_in_chunk(start + size, last_index, stacks->a->index)))
 				ft_rotate_b(&stacks->b, 1, flag->bench, c);
 			else if (stacks->a)
-				ft_rotate_r(&stacks->a, &stacks->b, flag->bench, c);
+				ft_rotate_r(&stacks->a, &stacks->b, 1, c);
 		}
 		else if (stacks->a->index >= start + size
 			&& stacks->a->index <= last_index)
-			ft_push_b(&stacks->b, &stacks->a, flag->bench, c);
+			ft_push_b(&stacks->b, &stacks->a, 1, c);
 		else
 			ft_rotate_a(&stacks->a, 1, flag->bench, c);
 	}

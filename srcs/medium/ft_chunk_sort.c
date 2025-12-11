@@ -6,7 +6,7 @@
 /*   By: jmattion <jmattion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 11:12:05 by jmattion          #+#    #+#             */
-/*   Updated: 2025/12/11 16:00:50 by jmattion         ###   ########.fr       */
+/*   Updated: 2025/12/11 18:39:05 by jmattion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,13 @@ void	ft_medium_sub(t_stacks *stacks, t_flag *flag, t_counter *c, int size)
 		max_index = ft_max_index(stacks->b);
 		if (stacks->b->index == max_index)
 		{
-			ft_push_a(&stacks->a, &stacks->b, flag->bench, c);
+			ft_push_a(&stacks->a, &stacks->b, 1, c);
 			if (stacks->a && stacks->a->next
 				&& stacks->a->index > stacks->a->next->index)
 				ft_swap_a(&stacks->a, 1, flag->bench, c);
 		}
 		else if (stacks->b->index == max_index - 1 && max_index != size - 1)
-			ft_push_a(&stacks->a, &stacks->b, flag->bench, c);
+			ft_push_a(&stacks->a, &stacks->b, 1, c);
 		else
 		{
 			if (is_up(stacks->b, max_index))
@@ -78,13 +78,13 @@ void	ft_chunk_loop(t_stacks *stacks, t_flag *flags, t_counter *c, int r)
 		{
 			if (stacks->a->index < r)
 			{
-				ft_push_b(&stacks->b, &stacks->a, flags->bench, c);
+				ft_push_b(&stacks->b, &stacks->a, 1, c);
 				if (stacks->b->index < r - (c_size / 2))
 					ft_rotate_b(&stacks->b, 1, flags->bench, c);
 			}
 			else if (stacks->a->index < r + c_size)
 			{
-				ft_push_b(&stacks->b, &stacks->a, flags->bench, c);
+				ft_push_b(&stacks->b, &stacks->a, 1, c);
 				ft_rotate_b(&stacks->b, 1, flags->bench, c);
 			}
 			else

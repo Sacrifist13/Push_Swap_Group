@@ -12,7 +12,7 @@
 
 #include "../../includes/common.h"
 
-void	ft_push_a(t_node **a, t_node **b, int bm, t_counter *c)
+void	ft_push_a(t_node **a, t_node **b, int w, t_counter *c)
 {
 	t_node	*tmp;
 
@@ -27,13 +27,13 @@ void	ft_push_a(t_node **a, t_node **b, int bm, t_counter *c)
 		(*a)->prev = tmp;
 	tmp->prev = NULL;
 	*a = tmp;
-	if (!bm)
+	if (w)
 		ft_printf("pa\n");
 	c->pa_count++;
 	return ;
 }
 
-void	ft_push_b(t_node **b, t_node **a, int bm, t_counter *c)
+void	ft_push_b(t_node **b, t_node **a, int w, t_counter *c)
 {
 	t_node	*tmp;
 
@@ -48,7 +48,7 @@ void	ft_push_b(t_node **b, t_node **a, int bm, t_counter *c)
 		(*b)->prev = tmp;
 	tmp->prev = NULL;
 	*b = tmp;
-	if (!bm)
+	if (w)
 		ft_printf("pb\n");
 	c->pb_count++;
 	return ;

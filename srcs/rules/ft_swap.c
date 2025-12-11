@@ -31,8 +31,7 @@ void	ft_swap_a(t_node **stack, int w, int bm, t_counter *c)
 	if (w)
 	{
 		c->sa_count++;
-		if (!bm)
-			ft_printf("sa\n");
+		ft_printf("sa\n");
 	}
 	return ;
 }
@@ -56,18 +55,17 @@ void	ft_swap_b(t_node **stack, int w, int bm, t_counter *c)
 	if (w)
 	{
 		c->sb_count++;
-		if (!bm)
-			ft_printf("sb\n");
+		ft_printf("sb\n");
 	}
 	return ;
 }
 
-void	ft_swap_s(t_node **a, t_node **b, int bm, t_counter *c)
+void	ft_swap_s(t_node **a, t_node **b, int w, t_counter *c)
 {
-	ft_swap_a(a, 0, bm, c);
-	ft_swap_b(b, 0, bm, c);
-	if (!bm)
-		ft_printf("ss\n");
-	c->ss_count++;
+	ft_swap_a(a, 0, 0, c);
+	ft_swap_b(b, 0, 0, c);
+	ft_printf("ss\n");
+	if (w)
+		c->ss_count++;
 	return ;
 }
