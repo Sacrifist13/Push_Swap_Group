@@ -12,6 +12,7 @@
 
 NAME= 			push_swap
 LIBFT=			libft.a
+BONUS=			checker
 CFLAGS= 		-Iincludes -Ilibft
 CC= 			cc
 RM= 			rm -rf
@@ -67,7 +68,14 @@ SRCS_DEBUG=		srcs/debug/ft_debug.c \
 				srcs/debug/ft_debug_tools.c \
 				srcs/debug/ft_print_op.c
 
+SRCS_BONUS=		srcs/bonus/ft_checker_sub.c \
+				srcs/bonus/ft_checker.c
+
 OBJS=			$(SRC_MAIN:.c=.o) $(SRCS_TOOLS:.c=.o) $(SRCS_PARSING:.c=.o) $(SRCS_STRUCT:.c=.o) $(SRCS_RULES:.c=.o) $(SRC_SELECTOR:.c=.o) $(SRCS_ALGO:.c=.o)  $(SRCS_BENCH:.c=.o) $(SRCS_DEBUG:.c=.o)
+
+OBJSBONUS=		$(SRCS_BONUS:.c=.o) $(SRCS_TOOLS:.c=.o) $(SRCS_PARSING:.c=.o) $(SRCS_STRUCT:.c=.o) $(SRCS_RULES:.c=.o) $(SRC_SELECTOR:.c=.o) $(SRCS_ALGO:.c=.o)  $(SRCS_BENCH:.c=.o) $(SRCS_DEBUG:.c=.o)
+
+OBJSALL=		$(SRC_MAIN:.c=.o) $(SRCS_BONUS:.c=.o) $(SRCS_TOOLS:.c=.o) $(SRCS_PARSING:.c=.o) $(SRCS_STRUCT:.c=.o) $(SRCS_RULES:.c=.o) $(SRC_SELECTOR:.c=.o) $(SRCS_ALGO:.c=.o)  $(SRCS_BENCH:.c=.o) $(SRCS_DEBUG:.c=.o)
 
 all:			$(LIBFT) $(NAME)
 
@@ -79,13 +87,18 @@ $(NAME):		$(OBJS)
 %.o:%.c
 				$(CC) $(CFLAGS) -c $< -o $@
 
+bonus :			$(LIBFT) $(BONUS)
+
+$(BONUS):		$(OBJSBONUS)
+				$(CC) $(OBJSBONUS) -L./libft -lft -o $(BONUS)
+
 clean :
 				$(MAKE) clean -C libft/
-				$(RM) $(OBJS)
+				$(RM) $(OBJSALL)
 
 fclean : 		clean
 				$(MAKE) fclean -C libft/
-				$(RM) $(NAME)
+				$(RM) $(NAME) $(BONUS)
 
 re: 			fclean all
 

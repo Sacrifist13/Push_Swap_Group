@@ -211,4 +211,9 @@ void		ft_print_setup(t_stacks *stacks, t_flag *flag);
 void		ft_print_title(void);
 void		ft_print_op(t_op *op_c);
 /* ----              ---- */
+
+/* -- BONUS PART -- */
+void		ft_do_op(t_stacks *stacks, t_counter *counter, char *op);
+int			ft_is_op(char *op);
+/* ----              ---- */
 #endif
