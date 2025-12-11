@@ -89,7 +89,8 @@ SRCS =	libft/ft_isalpha.c \
 		printf/ft_transform_ptr_bonus.c \
 		printf/ft_transform_str_bonus.c \
 		printf/ft_transform_uint_bonus.c \
-		printf/ft_tools_bonus.c
+		printf/ft_tools_bonus.c \
+		gnl/get_next_line.c 
 
 OBJS= $(SRCS:.c=.o)
 

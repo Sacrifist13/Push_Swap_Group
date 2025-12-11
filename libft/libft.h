@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "printf.h"
+# include "get_next_line.h"
 
 /* -- PART 1 - Libc Functions -- */
 int		ft_isalpha(int c);
