@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_benchmark.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jmattion <jmattion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 17:49:46 by kkraft            #+#    #+#             */
-/*   Updated: 2025/12/11 15:45:47 by marvin           ###   ########.fr       */
+/*   Updated: 2025/12/11 16:01:44 by jmattion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void	ft_print_benchmark(t_counter *c, t_flag *flag, float disorder)
 	int	disorder_int;
 
 	disorder_int = (int)(disorder * 100000);
-	ft_print_disorder(disorder_int, disorder_int % 10);
+	ft_printf("\n\n========================================\n");
+	ft_printf("            BENCH MARK MODE\n");
+	ft_printf("========================================\n\n");
+	ft_print_disorder(disorder_int, disorder_int % 10, disorder);
 	ft_putstr_fd("\n", 2);
 	ft_print_strategy(flag, disorder);
 	ft_putstr_fd("\n", 2);
@@ -30,12 +33,17 @@ void	ft_print_benchmark(t_counter *c, t_flag *flag, float disorder)
 	return ;
 }
 
-void	ft_print_disorder(int disorder, int rest)
+void	ft_print_disorder(int disorder, int rest, float full_disorder)
 {
 	ft_putstr_fd("[bench] disorder: ", 2);
 	if (!disorder)
 	{
 		ft_putstr_fd("00.00%", 2);
+		return ;
+	}
+	if (full_disorder == 1)
+	{
+		ft_putstr_fd("100.00%", 2);
 		return ;
 	}
 	if (rest != 0 && rest > 5)

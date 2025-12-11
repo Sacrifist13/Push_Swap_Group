@@ -102,18 +102,22 @@ float	ft_disorder(t_node *stack)
 	float	total_pairs;
 	float	mistakes;
 
-	if (!stack)
+	if (!stack || ft_stack_size(stack) == 1)
 		return (0);
 	tmp = stack;
-	total_pairs = (float)ft_stack_size(stack);
 	mistakes = 0;
-	if (total_pairs <= 0)
-		return (0);
-	while (tmp->next != NULL)
+	total_pairs = 0;
+	while (stack)
 	{
-		if (tmp->index > tmp->next->index)
-			mistakes++;
-		tmp = tmp->next;
+		tmp = stack->next;
+		while (tmp)
+		{
+			total_pairs++;
+			if (stack->index > tmp->index)
+				mistakes++;
+			tmp = tmp->next;
+		}
+		stack = stack->next;
 	}
 	return (mistakes / total_pairs);
 }

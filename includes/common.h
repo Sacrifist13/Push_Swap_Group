@@ -152,7 +152,7 @@ void		ft_mix_cost_sub(t_stacks *stacks, int index, t_op *op_c);
 
 /* -- BENCHMARK MODE PART -- */
 void		ft_print_benchmark(t_counter *c, t_flag *flag, float disorder);
-void		ft_print_disorder(int disorder, int rest);
+void		ft_print_disorder(int disorder, int rest, float full_disorder);
 void		ft_print_disorder_sub(int disorder);
 void		ft_print_strategy(t_flag *flag, float disorder);
 void		ft_print_total_ops(t_counter *c);
