@@ -86,11 +86,11 @@ ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker $ARG
 
 ## Algorithms
 
-### Selection Sort (Simple)
+### Selection Sort (Simple) $O(n^2)$
 
-### Chunk Sort (Medium)
+### Chunk Sort (Medium) $O(n\sqrt{n})$
 
-### Turk Sort (Complex)
+### Turk Sort (Complex) $O(n \log n)$
 
 ### Adaptive Strategy
 
