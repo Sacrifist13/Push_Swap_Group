@@ -165,11 +165,6 @@ This process (Steps 2, 3) is repeated until the current chunk is empty in `b`, a
 Once `b` is empty, stack `a` is sorted except for potentially needing a final minimal rotation (`ra` or `rra`) to bring the smallest element (index 0) to the very top.
 
 ### Adaptive Strategy
-Voici la section **Adaptive Strategy** formatée selon le même modèle que les précédentes, basée sur la logique trouvée dans `srcs/selector/ft_selector.c` et le calcul du désordre dans `srcs/parsing/ft_parsing_utils.c`.
-
-***
-
-### Adaptive Strategy
 
 * **1 - Metric Calculation (Disorder Analysis)**
 Before performing any operations, the program performs a read-only scan of stack `a` to compute a "disorder" index ranging from 0.0 (perfectly sorted) to 1.0 (reverse sorted). This is calculated by dividing the total number of inversions (pairs where a larger number precedes a smaller one) by the total number of possible pairs.
