@@ -181,9 +181,9 @@ The algorithm compares the calculated disorder against thresholds to select the 
 If the data is less than 20% disordered, the **Simple Algorithm** is triggered. 
 
 * **4 - Medium Disorder Regime (< 0.5)**
-For data that is moderately shuffled (between 20% and 50% disordered), the **Medium Algorithm (Chunk Sort)** is selected.
+For data that is moderately shuffled (between 20% and 50% disordered), the **Medium Algorithm** is selected.
 
 * **5 - High Disorder Regime (≥ 0.5)**
-When the stack is chaotic (more than 50% disordered), the **Complex Algorithm (Cost-based)** is applied.
+When the stack is chaotic (more than 50% disordered), the **Complex Algorithm** is applied.
 
 ## Resources
