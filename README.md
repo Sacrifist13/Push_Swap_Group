@@ -110,7 +110,7 @@ To meet the sorting condition (elements in ascending order in a and empty `b`), 
 ### Chunk Sort (Medium) $O(n\sqrt{n})$
 
 ### Segment Logic Sort (Complex) $O(n \log n)$
-#### Phase 1 - Distribution and Pre-Sorting (A $\rightarrow$ B)
+#### Phase 1 - Distribution and Pre-Sorting (A -> B)
 
 This phase moves the majority of elements from stack `a` to stack `b`, performing a binary pre-sorting within `b` while minimizing rotations in `a`.
 
@@ -123,13 +123,13 @@ The algorithm processes the unsorted elements by defining a current processing r
 * **3 - Targeting and Binary Pre-sorting in B**
 As elements within the current two-chunk range are pushed to B, their placement is optimized for Phase 4:
 
- -Upper Placement (Largest Index): If an element belongs to the upper chunk of the pair, it is pushed to `b` and kept near the top (using pb).
- -Lower Placement (Smallest Index): If an element belongs to the lower chunk of the pair, it is pushed to `b` and immediately rotated towards the bottom (`rb`).
+ - Upper Placement (Largest Index): If an element belongs to the upper chunk of the pair, it is pushed to `b` and kept near the top (using pb).
+ - Lower Placement (Smallest Index): If an element belongs to the lower chunk of the pair, it is pushed to `b` and immediately rotated towards the bottom (`rb`).
  - Optimization: If the current element belongs to the Lower Chunk and the next targeted element in `a` is not yet at the top of `a`, the instruction `rr` is used instead of separate `ra` and `rb` operations.
 
 Termination Condition This entire process (Steps 2 and 3) is repeated iteratively until stack `a` is completely empty.
 
-#### Phase 2 - Final Triage and Minimum Cost Analysis (B $\rightarrow$ A)
+#### Phase 2 - Final Triage and Minimum Cost Analysis (B -> A)
 * **1 - Chunk Priority**
 The process is executed chunk by chunk, starting with the elements belonging to the largest index chunk (highest values) present in `b`, and then progressively moving down to the smallest index chunk. This ensures `a` is built correctly from the largest numbers downwards.
 
