@@ -17,61 +17,57 @@ CFLAGS= 		-Iincludes -Ilibft
 CC= 			cc
 RM= 			rm -rf
 
-SRC_MAIN=		srcs/main.c
+SRC_MAIN=		main.c
 
-SRCS_TOOLS=		srcs/tools/ft_clean_split.c \
-				srcs/tools/ft_swap_int.c \
-				srcs/tools/ft_sort_tab.c \
-				srcs/tools/ft_return_str.c \
-				srcs/tools/ft_node_by_index.c \
-				srcs/tools/ft_repeat_reverse_rotate.c \
-				srcs/tools/ft_repeat_rotate.c \
-				srcs/tools/ft_repeat_swap.c \
-				srcs/tools/ft_sqrt.c \
-				srcs/tools/ft_node_place.c \
-				srcs/tools/ft_reset_op.c \
-				srcs/tools/ft_put_max_top.c \
-				srcs/tools/ft_remaining.c \
-				srcs/tools/ft_in_chunk.c \
-				srcs/tools/ft_stack.c \
-				srcs/tools/ft_index.c \
-				srcs/tools/ft_move.c \
-				srcs/tools/ft_cost.c \
-				srcs/tools/ft_str.c \
+SRCS_TOOLS=		ft_clean_split.c \
+				ft_swap_int.c \
+				ft_sort_tab.c \
+				ft_return_str.c \
+				ft_node_by_index.c \
+				ft_repeat_reverse_rotate.c \
+				ft_repeat_rotate.c \
+				ft_repeat_swap.c \
+				ft_sqrt.c \
+				ft_node_place.c \
+				ft_reset_op.c \
+				ft_put_max_top.c \
+				ft_remaining.c \
+				ft_in_chunk.c \
+				ft_stack.c \
+				ft_index.c \
+				ft_move.c \
+				ft_cost.c \
+				ft_str.c \
 
-SRCS_PARSING=	srcs/parsing/ft_check_inputs.c \
-				srcs/parsing/ft_check_utils.c \
-				srcs/parsing/ft_parsing_inputs.c \
-				srcs/parsing/ft_parsing_utils.c
+SRCS_PARSING=	ft_check_inputs.c \
+				ft_check_utils.c \
+				ft_parsing_inputs.c \
+				ft_parsing_utils.c
 
-SRCS_STRUCT=	srcs/struct/ft_struct.c
+SRCS_STRUCT=	ft_struct.c
 
-SRCS_RULES=		srcs/rules/ft_push.c \
-				srcs/rules/ft_reverse_rotate.c \
-				srcs/rules/ft_rotate.c \
-				srcs/rules/ft_swap.c
+SRCS_RULES=		ft_push.c \
+				ft_reverse_rotate.c \
+				ft_rotate.c \
+				ft_swap.c
 
-SRC_SELECTOR=	srcs/selector/ft_selector.c
+SRC_SELECTOR=	ft_selector.c
 
-SRCS_ALGO=		srcs/simple/ft_selection_sort.c \
-				srcs/medium/ft_chunk_sort.c \
-				srcs/complex/ft_smart_sort.c \
-				srcs/complex/ft_pre_sort.c \
-				srcs/complex/ft_complex_sub.c \
-				srcs/complex/ft_last_sort.c \
-				srcs/complex/ft_chunk_sort_cost.c
+SRCS_ALGO=		ft_selection_sort.c \
+				ft_chunk_sort.c \
+				ft_smart_sort.c \
+				ft_pre_sort.c \
+				ft_complex_sub.c \
+				ft_last_sort.c \
+				ft_chunk_sort_cost.c
 
-SRCS_BENCH=		srcs/bench/ft_benchmark.c \
-				srcs/bench/ft_benchmark_sub.c
+SRCS_BENCH=		ft_benchmark.c \
+				ft_benchmark_sub.c
 
-SRCS_DEBUG=		srcs/debug/ft_debug.c \
-				srcs/debug/ft_debug_tools.c \
-				srcs/debug/ft_print_op.c
+SRCS_BONUS=		ft_checker_sub_bonus.c \
+				ft_checker_bonus.c
 
-SRCS_BONUS=		srcs/bonus/ft_checker_sub.c \
-				srcs/bonus/ft_checker.c
-
-OBJS=			$(SRC_MAIN:.c=.o) $(SRCS_TOOLS:.c=.o) $(SRCS_PARSING:.c=.o) $(SRCS_STRUCT:.c=.o) $(SRCS_RULES:.c=.o) $(SRC_SELECTOR:.c=.o) $(SRCS_ALGO:.c=.o)  $(SRCS_BENCH:.c=.o) $(SRCS_DEBUG:.c=.o)
+OBJS=			$(SRC_MAIN:.c=.o) $(SRCS_TOOLS:.c=.o) $(SRCS_PARSING:.c=.o) $(SRCS_STRUCT:.c=.o) $(SRCS_RULES:.c=.o) $(SRC_SELECTOR:.c=.o) $(SRCS_ALGO:.c=.o)  $(SRCS_BENCH:.c=.o)
 
 OBJSBONUS=		$(SRCS_BONUS:.c=.o) $(SRCS_TOOLS:.c=.o) $(SRCS_PARSING:.c=.o) $(SRCS_STRUCT:.c=.o) $(SRCS_RULES:.c=.o) $(SRC_SELECTOR:.c=.o) $(SRCS_ALGO:.c=.o)  $(SRCS_BENCH:.c=.o) $(SRCS_DEBUG:.c=.o)
 
