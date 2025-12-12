@@ -165,5 +165,25 @@ This process (Steps 2, 3) is repeated until the current chunk is empty in `b`, a
 Once `b` is empty, stack `a` is sorted except for potentially needing a final minimal rotation (`ra` or `rra`) to bring the smallest element (index 0) to the very top.
 
 ### Adaptive Strategy
+Voici la section **Adaptive Strategy** formatée selon le même modèle que les précédentes, basée sur la logique trouvée dans `srcs/selector/ft_selector.c` et le calcul du désordre dans `srcs/parsing/ft_parsing_utils.c`.
+
+***
+
+### Adaptive Strategy
+
+* **1 - Metric Calculation (Disorder Analysis)**
+Before performing any operations, the program performs a read-only scan of stack `a` to compute a "disorder" index ranging from 0.0 (perfectly sorted) to 1.0 (reverse sorted). This is calculated by dividing the total number of inversions (pairs where a larger number precedes a smaller one) by the total number of possible pairs.
+
+* **2 - Regime Selection (Threshold Logic)**
+The algorithm compares the calculated disorder against thresholds to select the most operation-efficient sorting strategy for the specific data state.
+
+* **3 - Low Disorder Regime (< 0.2)**
+If the data is less than 20% disordered, the **Simple Algorithm** is triggered. 
+
+* **4 - Medium Disorder Regime (< 0.5)**
+For data that is moderately shuffled (between 20% and 50% disordered), the **Medium Algorithm (Chunk Sort)** is selected.
+
+* **5 - High Disorder Regime (≥ 0.5)**
+When the stack is chaotic (more than 50% disordered), the **Complex Algorithm (Cost-based)** is applied.
 
 ## Resources
