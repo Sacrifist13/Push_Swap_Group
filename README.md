@@ -87,24 +87,19 @@ ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker $ARG
 ## Algorithms
 
 ### Selection Sort (Simple) $O(n^2)$
-* **1 - Miniimum Search**
-
+* **1 - Minimum Search**
 In each iteration, the algorithm locates the position of the smallest unsorted element, identified by its lowest sorted index (or raw value), within stack `a`.
 
 * **2 - Rotation to the Top**
-
 A distance calculation is performed to determine the shortest operation sequence (minimum of `ra` or `rra`) required to bring this minimum element to the top of stack `a`.
 
 * **3 - Unidirectional Transfer**
-
 The element is immediately transferred to stack `b` using the `pb` instruction.
 
 * **4 - Reconstruction Phase**
-
 Steps 1 through 3 are repeated until a is completely empty. Stack `b` then holds all elements in strictly descending order (from largest to smallest, with the absolute minimum at the bottom).
 
 * **5 - Finalization** 
-
 To meet the sorting condition (elements in ascending order in a and empty `b`), all elements are returned from `b` to `a` using a sequence of `pa` operations.
 
 ### Chunk Sort (Medium) $O(n\sqrt{n})$
