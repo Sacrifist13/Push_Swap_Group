@@ -6,7 +6,7 @@
 /*   By: jmattion <jmattion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 20:57:55 by jules             #+#    #+#             */
-/*   Updated: 2025/12/12 09:50:39 by jmattion         ###   ########.fr       */
+/*   Updated: 2025/12/12 16:23:31 by jmattion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	main(int argc, char **argv)
 	{
 		ft_clean_stacks(stacks);
 		free(flag);
-		ft_printf("Error\n");
+		ft_putstr_fd("Error\n", 2);
 		return (1);
 	}
 	counter = ft_new_counter();

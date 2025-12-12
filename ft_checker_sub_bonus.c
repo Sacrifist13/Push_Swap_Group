@@ -6,7 +6,7 @@
 /*   By: jmattion <jmattion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:04:34 by jmattion          #+#    #+#             */
-/*   Updated: 2025/12/12 09:55:07 by jmattion         ###   ########.fr       */
+/*   Updated: 2025/12/12 16:23:38 by jmattion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	ft_check_argc(int argc)
 {
 	if (argc < 2)
 	{
-		ft_printf("Error\n");
+		ft_putstr_fd("Error\n", 2);
 		return (1);
 	}
 	return (0);
