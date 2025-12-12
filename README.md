@@ -110,26 +110,21 @@ To meet the sorting condition (elements in ascending order in a and empty `b`), 
 ### Chunk Sort (Medium) $O(n\sqrt{n})$
 #### Phase 1 - Emptying A (A -> B)
 * **1 - Dynamic Chunk Sizing**
-
 The algorithm calculates an optimal chunk size based on the square root of the total number of elements in stack `a`. This divides the stack into dynamic ranges.
 
 * **2 - Range-Based Distribution**
-
 The algorithm iterates through stack `a`, identifying elements that fall within the current chunk limit (or the next chunk for optimization). If an element belongs to the current range, it is immediately pushed to stack `b` using `pb`.
 
 * **3 - Smart Placement in B**
-
 As elements are pushed to `b`, a local optimization is applied:
 - If the element belongs to the lower half of the current chunk, stack `b` is rotated (`rb`). This places smaller elements at the bottom, keeping larger elements of the chunk near the top.
 - If the element belongs to the upper half, it remains at the top of `b`.
 
 * **4 - Variable Increment**
-
 This cycle repeats, increasing the range limit by the chunk size, until all elements from `a` have been transferred to `b`.
 
 #### Phase 2 - Final triage and filling A (B -> A)
 * **5 - Greedy Sort (Max to Top)**
-
 To reconstruct `a` in sorted order, the algorithm locates the maximum value within stack `b`. It calculates the most efficient rotation direction (up via `rb` or down via `rrb`) to bring this maximum element to the top, then pushes it back to `a` (`pa`). This repeats until `b` is empty.
 
 ### Segment Logic Sort (Complex) $O(n \log n)$
