@@ -187,3 +187,9 @@ For data that is moderately shuffled (between 20% and 50% disordered), the **Med
 When the stack is chaotic (more than 50% disordered), the **Complex Algorithm** is applied.
 
 ## Resources 💻
+
+* **Documentation:**
+    * We primarily researched the standard algorithms suggested in the subject examples (Selection Sort, Chunk Sort, etc.) to understand their fundamental logic. We then adapted these concepts to fit the specific constraints and limited instruction set of the Push_swap project.
+
+* **AI Usage:**
+    * As permitted by the subject, AI tools were used to assist in drafting, structuring, and formatting this README file to ensure clarity and compliance with the project requirements.
