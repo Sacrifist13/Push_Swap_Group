@@ -1,8 +1,8 @@
-# Push_swap
+# Push_swap ♻️
 
 *This project has been created as part of the 42 curriculum by jmattion, kkraft.*
 
-## Description
+## Description 📜
 
 The **Push_swap** project is a straightforward yet complex algorithmic challenge: data must be sorted. We have at our disposal a set of integer values, two stacks (`a` and `b`), and a limited set of instructions to manipulate them.
 
@@ -19,7 +19,7 @@ Additionally, a custom **benchmark mode** have been implemented to verify the so
 
 ## Instructions
 
-### Compilation
+### Compilation 🛠️
 
 Use the provided `Makefile` to compile the project.
 
@@ -43,7 +43,7 @@ Use the provided `Makefile` to compile the project.
     make re         # Recompiles everything
     ```
 
-### Execution
+### Execution ⏯️
 
 #### The `push_swap` program
 
@@ -84,7 +84,7 @@ ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker $ARG
   * Displays `KO` otherwise.
   * Displays `Error` in case of invalid inputs.
 
-## Algorithms
+## Algorithms 🤖
 
 ### Selection Sort (Simple) $O(n^2)$
 * **1 - Minimum Search**
@@ -186,4 +186,4 @@ For data that is moderately shuffled (between 20% and 50% disordered), the **Med
 * **5 - High Disorder Regime (≥ 0.5)**
 When the stack is chaotic (more than 50% disordered), the **Complex Algorithm** is applied.
 
-## Resources
+## Resources 💻
