@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_benchmark.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkraft <kkraft@student42>                  +#+  +:+       +#+        */
+/*   By: jmattion <jmattion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 17:49:46 by kkraft            #+#    #+#             */
-/*   Updated: 2025/12/12 09:13:57 by kkraft           ###   ########.fr       */
+/*   Updated: 2025/12/12 09:49:41 by jmattion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_print_disorder_sub(int disorder)
 	char	*s_disorder;
 	int		i;
 
-	s_disorder = malloc(sizeof(char) * 6);
+	s_disorder = malloc(sizeof(char) * 7);
 	if (!s_disorder)
 		return ;
 	i = 0;

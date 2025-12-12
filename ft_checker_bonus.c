@@ -6,7 +6,7 @@
 /*   By: jmattion <jmattion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 20:57:55 by jules             #+#    #+#             */
-/*   Updated: 2025/12/12 09:44:27 by jmattion         ###   ########.fr       */
+/*   Updated: 2025/12/12 09:50:39 by jmattion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,10 @@ int	ft_checker(t_stacks *stacks, t_counter *counter)
 		to_do = ft_clean_end(to_do);
 		if (!ft_is_op(to_do))
 		{
-			free(to_do);
 			while (to_do)
 			{
-				to_do = get_next_line(0);
 				free(to_do);
+				to_do = get_next_line(0);
 			}
 			return (0);
 		}
