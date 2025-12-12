@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checker_sub.c                                   :+:      :+:    :+:   */
+/*   ft_checker_sub_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkraft <kkraft@student42>                  +#+  +:+       +#+        */
+/*   By: jmattion <jmattion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:04:34 by jmattion          #+#    #+#             */
-/*   Updated: 2025/12/12 09:13:57 by kkraft           ###   ########.fr       */
+/*   Updated: 2025/12/12 09:44:06 by jmattion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,15 @@ int	ft_is_op(char *op)
 		return (1);
 	else if (!ft_strcmp(op, "pa") || !ft_strcmp(op, "pb"))
 		return (1);
+	return (0);
+}
+
+int	ft_check_argc(int argc)
+{
+	if (argc < 2)
+	{
+		ft_printf("Error\n");
+		return (1);
+	}
 	return (0);
 }

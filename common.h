@@ -205,5 +205,6 @@ void		ft_repeat_ss(t_stacks *stacks, t_flag *flag, t_counter *c, int n);
 /* -- BONUS PART -- */
 void		ft_do_op(t_stacks *stacks, t_counter *counter, char *op);
 int			ft_is_op(char *op);
+int			ft_check_argc(int argc);
 /* ----              ---- */
 #endif

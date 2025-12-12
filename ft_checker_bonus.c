@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checker.c                                       :+:      :+:    :+:   */
+/*   ft_checker_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkraft <kkraft@student42>                  +#+  +:+       +#+        */
+/*   By: jmattion <jmattion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 20:57:55 by jules             #+#    #+#             */
-/*   Updated: 2025/12/12 09:13:57 by kkraft           ###   ########.fr       */
+/*   Updated: 2025/12/12 09:44:27 by jmattion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ int	main(int argc, char **argv)
 	t_flag		*flag;
 	t_counter	*counter;
 
+	if (ft_check_argc(argc))
+		return (1);
 	flag = ft_new_flag();
 	stacks = ft_setup(argc, argv, flag);
 	if (stacks == NULL || stacks->a == NULL)
