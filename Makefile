@@ -13,7 +13,7 @@
 NAME= 			push_swap
 LIBFT=			libft.a
 BONUS=			checker
-CFLAGS= 		-Iincludes -Ilibft
+CFLAGS= 		-Ilibft
 CC= 			cc
 RM= 			rm -rf
 
